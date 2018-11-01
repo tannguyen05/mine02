@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div style="margin: 0px auto;padding: 10px; border: 1px double gray; width: 30%; background-color:darkgrey;">
+        <h3>LogIn</h3>
+        <% if(loginMessage.length > 0){%>
+        <h5 class="alert alert-danger"><%- loginMessage[0] %></h5>
+        <%}%>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="email" name="username" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" name="password", autocomplete="off" required>
+            </div>
+            <div align="center"><button type="submit" class="btn btn-primary">Submit</button></div>
+        </form>
+        <hr>
+
+        <p>Need an account? <a href="/signup">Signup</a></p>
+        <p>Or go <a href="/">home</a>.</p>
+    </div>
+</body>
+</html>

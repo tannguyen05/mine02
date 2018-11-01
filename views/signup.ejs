@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SIGNUP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div style="margin: 0px auto;padding: 10px; border: 1px double gray; width: 30%; background-color: cornsilk;">
+        <h3>SignUp</h3>
+        <% if(signupMessage === true){ %>
+            <h5 class="alert alert-success">Register succsesful!</h5>
+            <div align="center"><button class="btn btn-primary" onclick="window.location.href='/login'">Login</button></div>
+        <% }if(signupMessage === false){ %>
+            <h5 class="alert alert-danger">Register failed!</h5>
+        <% } %>
+        <form action="/signup" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" name="name" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" name="username" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" name="password", autocomplete="off" required>
+            </div>
+            <div class="form-group">
+                <label for="birthday">Birthday:</label>
+                <input type="date" class="form-control" name="birthday", autocomplete="off" required>
+            </div>
+
+            <div align="center"><button type="submit" class="btn btn-success">Submit</button></div>
+        </form>
+        <hr>
+
+        <p>Already have an account? <a href="/login">Login</a></p>
+        <p>Or go <a href="/">home</a>.</p>
+    </div>
+</body>
+</html>
